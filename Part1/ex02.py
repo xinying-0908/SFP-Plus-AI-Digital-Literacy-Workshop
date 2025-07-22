@@ -1,4 +1,2 @@
-text = "HELLOOOOOOOO"
-print(text)
-text = 100
-print (text)
+name = "Marvin"
+print (name)
