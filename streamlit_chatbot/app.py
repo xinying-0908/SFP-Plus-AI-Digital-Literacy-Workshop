@@ -15,6 +15,8 @@ st.markdown(
     f"<p style='text-align:right; color:gray;'>⏰ Malaysia Time: {malaysia_time}</p>", 
     unsafe_allow_html=True
 )
+st.markdown("---")
+
 # Set warm background color using custom CSS
 st.markdown(
     """
@@ -108,6 +110,16 @@ if sleep_hours < 7:
     st.warning("Try to get at least 7-8 hours of sleep.")
 else:
     st.success("Good job! You're well rested.")
+
+# 💬 Motivational Quote
+import random
+quotes = [
+    "Push yourself, because no one else will do it for you.",
+    "Small steps every day add up to big results.",
+    "You are your only limit.",
+    "Health is wealth – keep investing!"
+]
+st.markdown(f"💬 *{random.choice(quotes)}*")
 
 # Footer
 st.markdown("---")
