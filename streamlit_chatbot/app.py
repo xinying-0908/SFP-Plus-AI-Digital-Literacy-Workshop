@@ -1,13 +1,20 @@
 import streamlit as st
+from streamlit_autorefresh import st_autorefresh
 from datetime import datetime
 import pytz
 
 # Title
 st.title("🏃 Fitness Tracker App")
 
-malaysia_time = datetime.now(pytz.timezone('Asia/Kuala_Lumpur')).strftime("%d %b %Y, %I:%M:%S %p")
-st.markdown(f"<p style='text-align:right; color:gray;'>⏰ Malaysia Time: {malaysia_time}</p>", unsafe_allow_html=True)
+# Automatically refresh every 1 second (1000 ms)
+st_autorefresh(interval=1000, limit=None, key="clockrefresher")
 
+# Display live Malaysia time
+malaysia_time = datetime.now(pytz.timezone('Asia/Kuala_Lumpur')).strftime("%d %b %Y, %I:%M:%S %p")
+st.markdown(
+    f"<p style='text-align:right; color:gray;'>⏰ Malaysia Time: {malaysia_time}</p>", 
+    unsafe_allow_html=True
+)
 # Set warm background color using custom CSS
 st.markdown(
     """
